@@ -1,0 +1,19 @@
+intents:
+  - greet
+  - goodbye
+  - thank
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_thank
+
+templates:
+  utter_greet:
+    - text: "Labas."
+
+  utter_goodbye:
+    - text: "Viso."
+
+  utter_thank:
+    - text: "Prašom."
