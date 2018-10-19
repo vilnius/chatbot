@@ -1,3 +1,2 @@
 rasa_nlu[tensorflow]
 rasa_core
-tensorflow==1.5.0  # newer versions requires AVX support for CPU, my CPU does not have that

@@ -21,10 +21,24 @@ train-intents: env/ready
 	  --fixed_model_name nlu \
 	  --verbose
 
-
 .PHONY: train-stories
 train-stories: env/ready
 	env/bin/python -m rasa_core.train \
 	  --domain domain.yml \
 	  --stories stories \
 	  --out models/stories
+
+.PHONY: run
+run: env/ready
+	env/bin/python -m rasa_core.run \
+	  --core models/stories \
+	  --nlu models/current/nlu \
+	  --log_file run.log
+
+.PHONY: run-telegram
+run-telegram: env/ready
+	env/bin/python -m rasa_core.run \
+	  --core models/stories \
+	  --nlu models/current/nlu \
+	  --credentials credentials.yml \
+	  --port 5005
